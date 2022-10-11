@@ -23,5 +23,8 @@ resource "docker_container" "nginx" {
     internal = 80
     external = 8000
   }
-  must_run = false
+  must_run   = false
+  attach     = false
+  stdin_open = true
+  tty        = true
 }
