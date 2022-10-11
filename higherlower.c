@@ -13,6 +13,7 @@ int main() {
     printf("---------------------------\n");
 
     printf("Type 's' to start.\n");
+    printf("This is to test if the dynamic update in Terraform works.");
     char c = getchar();
     while((c = getchar()) != '\n' && c != EOF);
 
