@@ -1,0 +1,25 @@
+name: Publish to Docker
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  # from https://github.com/marketplace/actions/terraform-remote-state
+  get_remote_state:
+    runs-on: ubuntu-latest
+    name: Check terraform file are formatted correctly
+    steps:
+      - name: Get remote state
+        uses: dflook/terraform-remote-state@v1
+        id: remote-state
+        with:
+          backend_type: s3
+          backend_config: |
+            bucket=terraform-github-actions
+            key=terraform-remote-state
+            region=eu-west-2
+
+      - name: Send request
+        run: |
+          curl "${{ steps.remote-state.outputs.url }}"
