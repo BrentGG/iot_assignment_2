@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "docker" {
-  host    = "npipe:////.//pipe//docker_engine"
+  host = "npipe:////.//pipe//docker_engine"
 }
 
 /* tried a bunch of things to pull the latest version but doesn't work
