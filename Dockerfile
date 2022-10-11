@@ -6,5 +6,5 @@ RUN apt-get update && apt-get -y --no-install-recommends install \
     cmake \
     gdb \
     wget
-RUN gcc helloworld.c -o helloworld
-ENTRYPOINT ["./helloworld"]
+RUN gcc higherlower.c -o higherlower
+ENTRYPOINT ["./higherlower"]
