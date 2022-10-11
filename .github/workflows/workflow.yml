@@ -1,0 +1,19 @@
+name: Publish to Docker
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build container
+        uses: docker/build-push-action@v1
+        with:
+          username: brentgg
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: brentgg/iot_assignment_2/helloworld
+          tag_with_sha: true
