@@ -15,7 +15,6 @@ int main() {
     printf("Type 's' to start.\n");
     char c = getchar();
     while((c = getchar()) != '\n' && c != EOF);
-    printf("This is to test if the dynamic update in Terraform works.");
 
     printf("The range is %d to %d.\n\n", LOWER, UPPER);
 
