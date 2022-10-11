@@ -4,6 +4,9 @@ on:
     branches:
       - main
   workflow_dispatch:
+env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 jobs:
   # from https://github.com/marketplace/actions/terraform-remote-state
   get_remote_state:
