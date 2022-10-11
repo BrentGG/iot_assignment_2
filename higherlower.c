@@ -11,6 +11,11 @@ int main() {
 
     printf("Welcome to Higher or Lower!\n");
     printf("---------------------------\n");
+
+    printf("Type 's' to start.\n");
+    char c = getchar();
+    while((c = getchar()) != '\n' && c != EOF);
+
     printf("The range is %d to %d.\n\n", LOWER, UPPER);
 
     int score = 0;
