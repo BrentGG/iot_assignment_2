@@ -11,8 +11,19 @@ provider "docker" {
   host    = "npipe:////.//pipe//docker_engine"
 }
 
+/* tried a bunch of things to pull the latest version but doesn't work
+data "docker_registry_image" "nginx" {
+  name         = "ghcr.io/brentgg/iot_assignment_2/higherlower:latest"
+}
+
 resource "docker_image" "nginx" {
-  name         = "ghcr.io/brentgg/iot_assignment_2/higherlower:sha-c7af697"
+  name         = data.docker_registry_image.nginx.name
+  pull_triggers = [data.docker_registry_image.nginx.sha256_digest]
+  keep_locally = false
+}*/
+
+resource "docker_image" "nginx" {
+  name         = "ghcr.io/brentgg/iot_assignment_2/higherlower:sha-d521c04"
   keep_locally = false
 }
 
