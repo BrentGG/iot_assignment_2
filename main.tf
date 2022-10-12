@@ -23,7 +23,7 @@ resource "docker_image" "nginx" {
 }*/
 
 resource "docker_image" "nginx" {
-  name         = "ghcr.io/brentgg/iot_assignment_2/higherlower:sha-e873968"
+  name         = "ghcr.io/brentgg/iot_assignment_2/higherlower:latest"
   keep_locally = false
 }
 
