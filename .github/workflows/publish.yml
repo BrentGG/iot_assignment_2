@@ -16,5 +16,5 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           repository: brentgg/iot_assignment_2/higherlower
-          tag: latest
+          tags: latest
           #tag_with_sha: true
